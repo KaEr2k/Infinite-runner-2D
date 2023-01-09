@@ -18,4 +18,12 @@ public class Spikes : MonoBehaviour
             Destroy(gameObject);
         }
     }
+        private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Health targetHealth = collision.GetComponent<Health>();
+        if (targetHealth != null)
+        {
+            targetHealth.TakeDamage(1);
+        }
+    }
 }
